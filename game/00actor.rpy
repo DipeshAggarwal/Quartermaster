@@ -16,6 +16,15 @@ init python:
             if self.health < 0:
                 self.health = 0
 
+        def add_buff(self, buff):
+            self.buffs.append(buff)
+            if len(self.buffs) > 2:
+                del self.buffs[0]
+
+        def used_buff(self, buff):
+            index = self.buffs.index(buff)
+            del self.buffs[index]
+
     class Enemy():
 
         def __init__(self, name, image, buff):

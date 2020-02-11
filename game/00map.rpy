@@ -106,3 +106,4 @@ label walk_to_new_tile_controller:
 
 label new_tile_controller:
     "Here goes the logic for controlling events showcase and what happens on a new tile."
+    call screen map_overlay

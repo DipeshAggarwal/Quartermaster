@@ -9,11 +9,11 @@ init python:
         def calculate_available_space(self):
             self.max_space = len(store.roster.store)
 
-        def add_item(self, id):
-            self.store.append(id)
+        def add_item(self, item):
+            self.store.append(item)
 
-        def use_item(self, id):
-            index = self.store.index(id)
+        def use_item(self, item):
+            index = self.store.index(item)
             del self.store[index]
 
 screen inventory_screen():

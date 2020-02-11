@@ -33,7 +33,6 @@ init python:
             self.store = {}
 
         def load(self, filepath="recipes"):
-            return
             file_list = load(filepath, "index")
 
             for file in file_list:
