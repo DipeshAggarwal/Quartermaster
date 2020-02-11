@@ -3,6 +3,14 @@ init python:
     @property
     def get_current_tile():
         return map_data[y][x]
+
+    @property
+    def scouting_advantage():
+        if store.scouted_this_tile:
+            return True
+        if roster.check_if_buff_exists("scout"):
+            return True
+        return False
     
     def start_moving(scouting=False):
         renpy.hide_screen("chose_travel_mode_screen")
@@ -25,3 +33,6 @@ init python:
         total_members = 0
         for i in xrange(0, members):
             total_members.append(enemy_roster.get_random_enemy)
+
+    def chooose_battle_party(members=3):
+        pass

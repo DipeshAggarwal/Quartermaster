@@ -25,6 +25,12 @@ init python:
             index = self.buffs.index(buff)
             del self.buffs[index]
 
+        def is_buff_available(self, buff):
+            if buff in self.buffs:
+                return True
+            else:
+                return False
+
     class Enemy():
 
         def __init__(self, name, image, buff):
@@ -36,6 +42,12 @@ init python:
 
         def __init__(self):
             self.store = []
+
+        def check_if_buff_exists(self, buff):
+            for actor in self.store:
+                if actor.is_buff_available(buff):
+                    return True
+            return False
 
         @property
         def get_random_enemy(self):
