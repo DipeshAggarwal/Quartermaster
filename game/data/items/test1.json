@@ -1,0 +1,8 @@
+{
+    "id": "fail_recipe",
+    "name": "Goop",
+    "image": "",
+    "description": "",
+    "cost": 0,
+    "buff": []
+}

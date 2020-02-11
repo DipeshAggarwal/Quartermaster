@@ -1,0 +1,12 @@
+{
+    "id": "fail_recipe",
+    "name": "Goop",
+    "image": "",
+    "description": "",
+    "ingredients": [],
+    "heals": 0,
+    "time_needed": 0,
+    "cooking_location": "",
+    "random_cooking_chance": 0,
+    "produces": "",
+}
