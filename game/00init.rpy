@@ -18,6 +18,7 @@ init python:
         store.scouted_this_tile = scouting
         x, y = current_location
         store.current_tile_type = base_layer_tiles[current_season][map_data[y][x].base_layer]
+        map_data[y][x].has_player_visited = True
 
         renpy.jump("walk_to_new_tile_controller")
 

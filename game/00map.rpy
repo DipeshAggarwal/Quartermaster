@@ -12,6 +12,9 @@ init python:
             self.security_rating = renpy.random.randint(0, 20)
             self.searching_rating = renpy.random.randint(0, 30)
 
+            self.has_player_visited = False
+            self.has_enemy_raided = False
+
         @property
         def base_image(self):
             return "base/" + store.base_layer_tiles[current_season][self.base_layer] + ".jpg"
