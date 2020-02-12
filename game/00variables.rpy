@@ -23,6 +23,11 @@ default base_layer_tiles = {
     "summer": ["forest1", "forest2", "hill1", "hill2", "mnt1", "mnt2", "selo", "wild"]
 }
 
+default buff_counter = {
+    "a": ["b"],
+    "c": ["d"]
+}
+
 # Don't change these variables
 default map_data = [[MapTile(i, j) for i in range(0, tile_in_x)] for j in range(0, tile_in_y)]
 
@@ -31,3 +36,6 @@ default items_global_store = ItemStore()
 default inventory = Inventory()
 default roster = Roster()
 default enemy_roster = Roster()
+
+default raiding_party = []
+default player_party = []

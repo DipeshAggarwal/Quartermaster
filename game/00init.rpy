@@ -64,11 +64,3 @@ init python:
         for i in xrange(0, no_of_items):
             total_items.append(items_global_store.get_random_item)
         return total_items
-
-    def get_raiding_party(members=3):
-        total_members = 0
-        for i in xrange(0, members):
-            total_members.append(enemy_roster.get_random_enemy)
-
-    def chooose_battle_party(members=3):
-        pass
