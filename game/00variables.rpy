@@ -8,11 +8,13 @@ default default_tilepath = "images/tiles/"
 
 default current_turn_no = 0
 default current_tile_type = ""
-default enemy_turns_starts_at = 5
+default enemy_turns_starts_at = 3
 
-default time = 0
+default time = 8
+default day = 1
 
 default current_location = (0, 0)
+default enemy_location = (-1, -1)
 default next_location = (0, 0)
 default scouted_this_tile = False
 default current_season = "summer"

@@ -38,9 +38,12 @@ screen map_overlay(filepath=None):
             add path + map_data[y][x].base_image xpos x*tile_width ypos y*tile_height
 
             if mid_layer_visible:
-                add path + mid_image[y][x].base_image xpos x*tile_width ypos y*tile_height
+                add path + map_data[y][x].mid_image xpos x*tile_width ypos y*tile_height
             if sky_layer_visible:
-                add path + sky_image[y][x].base_image xpos x*tile_width ypos y*tile_height
+                add path + map_data[y][x].sky_image xpos x*tile_width ypos y*tile_height
+
+            if map_data[y][x].has_enemy_raided:
+                add "images/skull.png" xpos x*tile_width ypos y*tile_height
 
     fixed:
         xysize (108, 108)
@@ -105,6 +108,7 @@ label walk_to_new_tile_controller:
     "Here goes the logic for controlling events showcase and what happens while walking to a new tile."
 
     $ current_location = next_location
+    $ day += 1
     jump new_tile_controller
 
 label new_tile_controller:

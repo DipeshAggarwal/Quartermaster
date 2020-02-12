@@ -35,3 +35,9 @@ label start:
     # This ends the game.
 
     return
+
+ label stepped_on_a_raided_tile:
+    "Game lost."
+
+ label enemy_caught_with_player:
+    "Game lost."
