@@ -18,30 +18,48 @@ init python:
             return
 
         enemy_moved = False
+        move_direction = 0
         if enemy_location == (-1, -1):
             x, y = (0, 0)
         else:
             x, y = enemy_location
-            direction = "x" if current_location[0] > enemy_location[0]+1 else "y"
+            diff_x = current_location[0] - x
+            diff_y = current_location[0] - y
+            direction = "x" if diff_y > diff_x else "y"
 
             if direction == "y":
                 if current_location[1] > enemy_location[1] and enemy_location[1] != tile_in_y:
                     y += 1
+                    move_direction = 1
                     enemy_moved = True
                 elif current_location[1] < enemy_location[1] and enemy_location[1] != 0:
                     y -= 1
+                    move_direction = -1
                     enemy_moved = True
-            
-            if direction == "x" and enemy_moved == False:
+
+                if map_data[x][y].has_enemy_raided and not move_direction:
+                    y -= move_direction
+                    x += move_direction
+                    enemy_moved = True
+
+            if direction == "x" or not enemy_moved:
                 if current_location[0] > enemy_location[0] and enemy_location[0] != tile_in_x:
                     x += 1
+                    move_direction = 1
+                    enemy_moved = True
                 elif current_location[0] < enemy_location[0] and enemy_location[0] != 0:
                     x -= 1
+                    move_direction = -1
+                    enemy_moved = True
+                if map_data[x][y].has_enemy_raided:
+                    x -= move_direction
+                    y += move_direction
+                    enemy_moved = True
 
         enemy_location = (x, y)
-        map_data[x][y].has_enemy_raided = True
+        map_data[y][x].has_enemy_raided = True
 
-        if enemy_location == current_location:
+        if enemy_location == next_location:
             renpy.jump("enemy_caught_with_player")
 
     def add_time(t):
