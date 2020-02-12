@@ -36,8 +36,8 @@ label start:
 
     return
 
- label stepped_on_a_raided_tile:
+label stepped_on_a_raided_tile:
     "Game lost."
 
- label enemy_caught_with_player:
+label enemy_caught_with_player:
     "Game lost."

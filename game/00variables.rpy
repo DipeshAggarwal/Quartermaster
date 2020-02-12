@@ -19,13 +19,13 @@ default next_location = (0, 0)
 default scouted_this_tile = False
 default current_season = "summer"
 
-default map_data = [[MapTile(i, j) for i in range(0, tile_in_x)] for j in range(0, tile_in_y)]
-
 default base_layer_tiles = {
     "summer": ["forest1", "forest2", "hill1", "hill2", "mnt1", "mnt2", "selo", "wild"]
 }
 
 # Don't change these variables
+default map_data = [[MapTile(i, j) for i in range(0, tile_in_x)] for j in range(0, tile_in_y)]
+
 default recipe_book = RecipeBook()
 default items_global_store = ItemStore()
 default inventory = Inventory()
