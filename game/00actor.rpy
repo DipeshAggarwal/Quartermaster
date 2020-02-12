@@ -11,10 +11,17 @@ init python:
             self.hunger = hunger
             self.buffs = []
 
+            self.status = "alive"
+
         def add_hp(self, change):
             self.health += change
             if self.health < 0:
                 self.health = 0
+
+        def hit(self):
+            self.health -= 1
+            if self.health < 1:
+                self.status = "dead"
 
         def add_buff(self, buff):
             self.buffs.append(buff)

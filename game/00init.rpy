@@ -17,17 +17,26 @@ init python:
         if enemy_turns_starts_at > day:
             return
 
+        enemy_moved = False
         if enemy_location == (-1, -1):
             x, y = (0, 0)
         else:
             x, y = enemy_location
+            direction = "x" if current_location[0] > enemy_location[0]+1 else "y"
 
-            if current_location[1] > enemy_location[1]:
-                y += 1
-            elif current_location[1] < enemy_location[1]:
-                y -= 1
-            else:
-                x += 1
+            if direction == "y":
+                if current_location[1] > enemy_location[1] and enemy_location[1] != tile_in_y:
+                    y += 1
+                    enemy_moved = True
+                elif current_location[1] < enemy_location[1] and enemy_location[1] != 0:
+                    y -= 1
+                    enemy_moved = True
+            
+            if direction == "x" and enemy_moved == False:
+                if current_location[0] > enemy_location[0] and enemy_location[0] != tile_in_x:
+                    x += 1
+                elif current_location[0] < enemy_location[0] and enemy_location[0] != 0:
+                    x -= 1
 
         enemy_location = (x, y)
         map_data[x][y].has_enemy_raided = True
