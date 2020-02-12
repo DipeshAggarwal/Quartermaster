@@ -21,11 +21,11 @@ init python:
 
         @property
         def mid_image(self):
-            return "mid/" + store.base_layer_tiles[current_season][self.base_layer] + ".jpg"
+            return "mid/" + store.mid_layer_tiles[current_season][self.base_layer] + ".jpg"
 
         @property
         def sky_image(self):
-            return "sky/" + store.base_layer_tiles[current_season][self.base_layer] + ".jpg"
+            return "sky/" + store.sky_layer_tiles[current_season][self.base_layer] + ".jpg"
 
 screen map_overlay(filepath=None):
     if filepath:

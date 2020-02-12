@@ -22,6 +22,12 @@ default current_season = "summer"
 default base_layer_tiles = {
     "summer": ["forest1", "forest2", "hill1", "hill2", "mnt1", "mnt2", "selo", "wild"]
 }
+default mid_layer_tiles = {
+    "summer": []
+}
+default sky_layer_tiles = {
+    "summer": []
+}
 
 default buff_counter = {
     "a": ["b"],
